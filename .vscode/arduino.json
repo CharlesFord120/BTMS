@@ -1,0 +1,5 @@
+{
+    "board": "arduino:samd:mkrzero",
+    "sketch": "BTMS Code\\LookupTable.ino",
+    "port": "COM1"
+}

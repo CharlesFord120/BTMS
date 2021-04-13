@@ -4,17 +4,14 @@ float ResistanceTable[] = {31770,	28355,	24940,	22310,	19680,	17650,	15620,	1404
 	2972,	2722,	2472,	2269,	2066,	1900.5,	1735,	1600,	1465,	1354,	1243,	1151,	1059,	983.65,	908.3,	844.95,	781.6,	728,	674.4};
 int len = 0;
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
   len = sizeof(VoltageTable)/sizeof(VoltageTable[0]);
 }
 
 void loop() {
   float resistance = 0;
-  // read the input on analog pin 0:
-  int sensorValue = analogRead(A0);
-  // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
-  float voltage = sensorValue * (3.3 / 1023.0);
+  int sensorValue = analogRead(A1);
+  float voltage = sensorValue * (3.3 / 1023.0); // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
   for(int i = 0; i < len; i++)
   {
     if(i + 1 <= len && voltage < VoltageTable[i] && voltage > VoltageTable[i+1])
@@ -27,7 +24,7 @@ void loop() {
     }
     if(voltage < VoltageTable[len-1])
     {
-      resistance = ResistanceTable[len -1];
+      resistance = ResistanceTable[len-1];
     }
     if(voltage > VoltageTable[0])
     {

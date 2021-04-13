@@ -3,7 +3,7 @@ First Revision of the Battery Temperature Monitoring System
 
 To build this on the Arduino MKRZERO
 
-# IN VISUAL STUDIO CODE
+### IN VISUAL STUDIO CODE ###
 
 * You will need to install the Arduino Extension in Visual Studio Code.
 

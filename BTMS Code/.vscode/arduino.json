@@ -1,6 +1,6 @@
 {
     "port": "COM3",
     "board": "arduino:samd:mkrzero",
-    "sketch": "SPI\\SPI.ino",
+    "sketch": "Final Code\\Final.ino",
     "programmer": "arduino:atmel_ice"
 }

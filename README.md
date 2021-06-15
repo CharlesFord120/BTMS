@@ -7,7 +7,7 @@ To build this on the Arduino MKRZERO
 
 * You will need to install the Arduino Extension in Visual Studio Code.
 
-* Using the command palette you will need to open Board Manager and search for "Zero" and install "Arduino SAMD Boards (32-bits ARM Cortex-M0+)". This will install all the necessary files to communicate with the MKRZERO board. (You may need to reinstall if you are getting errors).
+* Using the command palette (ctrl+shift+p) you will need to open Board Manager and search for "Zero" and install "Arduino SAMD Boards (32-bits ARM Cortex-M0+)". This will install all the necessary files to communicate with the MKRZERO board. (You may need to reinstall if you are getting errors).
 
 * Again using the command palette you need to open the Board Configuration and choose the MKRZERO option to interface with the board.
 

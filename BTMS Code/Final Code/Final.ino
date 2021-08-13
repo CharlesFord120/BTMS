@@ -17,16 +17,17 @@ const int SlaveS3 = 3;
 const int SlaveS4 = 4;
 const int SlaveS5 = 5;
 
-float ReferenceVoltage = 3.3; //You may need to change this depending on the voltage supplied by the internal batteries to the arduino. I used 3.3V since I think this is the right voltage.
-
+ //You may need to change this depending on the voltage supplied by the internal batteries to the arduino. I used 3.3V since I think this is the right voltage.
+float ReferenceVoltage = 3.3;
 void setup() {
+  analogReference(AR_EXTERNAL);
   Serial.begin(9600);
   pinMode(SlaveS1, OUTPUT);
   pinMode(SlaveS2, OUTPUT);
   pinMode(SlaveS3, OUTPUT);
   pinMode(SlaveS4, OUTPUT);
   pinMode(SlaveS5, OUTPUT);
-
+  
   SPI.begin();
   len = sizeof(VoltageTable)/sizeof(VoltageTable[0]);
 }
@@ -62,11 +63,12 @@ void loop() {
     {
       if(TriggerLow == 1)
       {
-        //test = TempVRes[i];
+        test = TempVRes[i];
         digitalPotWrite(SlaveS1, 0, TempVRes[i]);
       }
       else
       {
+        test = TempVRes[i+1];
         digitalPotWrite(SlaveS1, 0, TempVRes[i+1]);
       }
       
@@ -152,9 +154,10 @@ void loop() {
 
 
   //Uncomment this section and the different slave selects to debug any issues.
-  /*Serial.print("Address: ");
+  Serial.print("Address: ");
   Serial.print(test);
   Serial.print("\t");
   Serial.print("Voltage: ");
-  Serial.println(voltage);*/
+  Serial.println(voltage1);
+  delay(100);
 }
